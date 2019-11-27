@@ -18,9 +18,5 @@ export class PhotosListComponent implements OnInit {
 
   ngOnInit(): void {
   this.photos = this.activatedRoute.snapshot.data['photos'];
-
-  this.debounce.next('f')
-  this.debounce.subscribe(value => alert(value));
-
   }
 }
