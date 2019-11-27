@@ -4,11 +4,21 @@ import { Routes, RouterModule } from '@angular/router';
 import { PhotosListComponent } from './photos/photos-list/photos-list.component';
 import { PhotosFormComponent } from './photos/photos-form/photos-form.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
+import { PhotoListResolver } from './photos/photos-list/photo.list.resolver';
 
 const routes: Routes = [
-   {path: 'user/:userName', component: PhotosListComponent},
-   {path: 'p/add', component: PhotosFormComponent},
-   {path: '**', component: NotFoundComponent}
+   {path: 'user/:userName', 
+    component: PhotosListComponent,
+    resolve: {
+       photos: PhotoListResolver
+    }
+    },
+   {path: 'p/add', 
+    component: PhotosFormComponent
+    },
+   {path: '**', 
+    component: NotFoundComponent
+    }
 
 ];
 
