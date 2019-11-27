@@ -5,13 +5,15 @@ import { PhotosListComponent } from './photos-list/photos-list.component';
 import { CommonModule } from '@angular/common';
 import { PhotosFormComponent } from './photos-form/photos-form.component';
 import { PhotosComponent } from './photos-list/photos/photos.component';
+import { FilterByDescription } from './photos-list/photos/filter-by-description.pipe';
 
 @NgModule({
     declarations: [
         PhotoComponent, 
         PhotosListComponent, 
         PhotosFormComponent, 
-        PhotosComponent
+        PhotosComponent,
+        FilterByDescription
     ],
     imports: [ 
         HttpClientModule, 
