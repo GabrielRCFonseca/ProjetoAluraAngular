@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Photo } from '../photo/photo';
 import { Subject } from 'rxjs';
+import { filter } from 'minimatch';
 
 @Component({
   selector: 'ap-photos-list',
@@ -18,5 +19,6 @@ export class PhotosListComponent implements OnInit {
 
   ngOnInit(): void {
   this.photos = this.activatedRoute.snapshot.data['photos'];
+  this.debounce.subscribe(filter => this.filter = filter);
   }
 }
