@@ -1,5 +1,5 @@
-import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
-import { Subject, from } from 'rxjs';
+import { Component, OnInit, OnDestroy, Output, EventEmitter, Input } from '@angular/core';
+import { Subject   } from 'rxjs';
 import { debounceTime } from 'rxjs/operators'
 @Component({
     selector: 'ap-search',
@@ -9,6 +9,7 @@ import { debounceTime } from 'rxjs/operators'
 export class SearchComponent implements OnInit, OnDestroy{
 
     @Output() onTyping: EventEmitter<string> = new EventEmitter<string>();
+    @Input() value: string = '';
     debounce: Subject<string> = new Subject<string>();
 
     ngOnInit(): void{
