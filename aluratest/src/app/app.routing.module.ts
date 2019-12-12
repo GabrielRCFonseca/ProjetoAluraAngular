@@ -5,20 +5,25 @@ import { PhotosListComponent } from './photos/photos-list/photos-list.component'
 import { PhotosFormComponent } from './photos/photos-form/photos-form.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { PhotoListResolver } from './photos/photos-list/photo.list.resolver';
-import { SigninComponent } from './home/signin/signin.componente';
 import { AuthGuard } from './core/auth/auth.guard';
+import { SignupComponent } from './home/signup/signup.component';
+import { SigninComponent } from './home/signin/signin.componente';
 
 const routes: Routes = [
-   {
+    {
         path: '',
         component: SigninComponent,
         canActivate: [AuthGuard]
-   },
-   {
+    },
+    {
+        path: 'signup', 
+        component: SignupComponent
+    },
+    {
         path: 'user/:userName', 
         component: PhotosListComponent,
         resolve: {
-        photos: PhotoListResolver
+            photos: PhotoListResolver
         }
     },
     {
