@@ -1,6 +1,6 @@
 <h4 class="text-center">Register to embrace a new world!</h4>
 
-<form [formGroup]="signupForm" class="form-group">
+<form [formGroup]="signupForm" class="form-group" (submit)="signUp()">
     <div class="form-group">
         <input formControlName="email" class="form-control" placeholder="E-mail" autofocus>
         <ap-vmessage 
@@ -70,7 +70,7 @@
         </ap-vmessage> 
     </div>
 
-    <button  [disabled]="signupForm.invalid || signupForm.pending" class="btn btn-primary">Register</button>
+    <button [disabled]="signupForm.invalid || signupForm.pending" class="btn btn-primary btn-block">Register</button>
 
     <p>Already a user? <a [routerLink]="['']"> Sign in!</a></p>
 </form>
