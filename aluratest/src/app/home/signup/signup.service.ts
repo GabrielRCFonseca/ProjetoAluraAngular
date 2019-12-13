@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-const API_URL = "http://localgost:3000";
+const API_URL = "http://localgost:2000";
 
 @Injectable({ providedIn: 'root' })
 export class signupService{
