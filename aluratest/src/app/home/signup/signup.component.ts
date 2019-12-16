@@ -5,11 +5,12 @@ import { Router } from '@angular/router';
 import { NewUser } from './new-users';
 import { userNotTakenValidatorService } from './user-not-taken.validator.service';
 import { lowerCaseValidator } from 'src/app/shared/validators/lower-case-validator';
-import { signupService } from './signup.service';
+import { SignupService } from './signup.service';
 import { PlatformDetectorService } from 'src/app/core/platform-detector/platform-detector.service';
 
 @Component({
-    templateUrl: './signup.component.html'
+    templateUrl: './signup.component.html',
+    providers: [ userNotTakenValidatorService ]
 })
 
 export class SignupComponent implements OnInit{
@@ -20,7 +21,7 @@ export class SignupComponent implements OnInit{
     constructor(
         private formBuilder: FormBuilder,
         private userNotTakenValidatorService: userNotTakenValidatorService,
-        private signUpService: signupService,
+        private signUpService: SignupService,
         private router: Router,
         private platformDetectorService: PlatformDetectorService){
 
